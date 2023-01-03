@@ -1,0 +1,31 @@
+To make a code production ready. One has to complete these steps
+1) Minify 2) Optimise 3) Clean console 4) Bundle
+
+
+There are many bundlers (Webpack, Vite, Parcel...)
+create-react-app uses Webpack!.
+
+npm install -D parcel (-D is a command for dev dependency. Not applicable for production)
+And this command is equivalent to npm install --save-dev parcel
+
+
+
+Package.json snippet
+
+"devDependencies": {
+    "parcel": "^2.8.2"
+}
+(Fact: ^ is called as caret)
+"^version" -> states that it will auto upgrade to minor version changes like 2.8.3
+"version"  -> It will keep the specified version only
+"~version" -> It will auto upgrade to major version changes like 3.0.0 
+
+
+Package-lock.json
+This file is like a snapshot which maintains the excat version of the dependencies
+
+npx parcel index.html
+In simple terms "Execute parcel with the entry point of index.html"
+
+It is important to mention type = "module" to scripts which have import statements
+<script type="module" src="App.js"></script>
